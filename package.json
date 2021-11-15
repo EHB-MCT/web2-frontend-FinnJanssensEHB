@@ -2,7 +2,7 @@
   "name": "web2-frontend-FinnJanssensEHB",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +11,14 @@
     "url": "git+https://github.com/EHB-MCT/web2-frontend-FinnJanssensEHB.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Finn Janssens",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EHB-MCT/web2-frontend-FinnJanssensEHB/issues"
   },
-  "homepage": "https://github.com/EHB-MCT/web2-frontend-FinnJanssensEHB#readme"
+  "homepage": "https://github.com/EHB-MCT/web2-frontend-FinnJanssensEHB#readme",
+  "devDependencies": {
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1"
+  }
 }
