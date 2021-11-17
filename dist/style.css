@@ -86,6 +86,32 @@ select {
   --black: #080709;
 }
 
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--black);
+}
+
+h1,
+h2,
+h3 {
+  font-family: alfarn,
+    sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: new-spirit,
+    serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*SCROLLBAR*/
+
 ::-webkit-scrollbar {
   width: 1em;
 }
@@ -99,4 +125,60 @@ select {
 
 body {
   background: var(--bg);
+  margin: 1em 8.125em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 20px;
+}
+
+#logoHeader {
+  grid-column: 1 / 2;
+  max-width: 60%;
+  justify-self: center;
+}
+
+#mainNav {
+  grid-column: 5 / span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+#mainNav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: alfarn,
+    sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#introductionSection {
+  height: 80vh;
+  align-items: center;
+}
+
+#introductionText {
+  grid-column: 2 / span 6;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+}
+
+#introductionSection h1 {
+  font-size: 3em;
+}
+
+#introductionLeft {
+  grid-column: 1 / span 3;
+  text-align: right;
+}
+
+#introductionRight {
+  grid-column: 4 / span 3;
 }
