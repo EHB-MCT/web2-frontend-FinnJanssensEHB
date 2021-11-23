@@ -163,12 +163,28 @@ body {
 }
 
 #mainNav a {
+  padding: 0.2em 0.4em;
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: alfarn,
     sans-serif;
   font-weight: 400;
   font-style: normal;
+  border-radius: 10px;
+}
+
+#mainNav a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width .2s;
+}
+
+#mainNav a:hover:after {
+  width: 100%;
+  transition: width .2s;
 }
 
 #introductionSection {
@@ -214,11 +230,15 @@ body {
   padding: 0.5em 1.5em;
   text-decoration: none;
   font-weight: 500;
+  transition: background .3s linear;
+  transition: color .3s linear;
 }
 
 .buttonPrimary:hover {
   background: var(--black);
   color: var(--bg);
+  transition: background .3s linear;
+  transition: color .3s linear;
 }
 
 #ontdekMeerBtn {
