@@ -16,7 +16,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\r\n\r\nlet navItems = document.querySelectorAll('#mainNav a');\r\n\r\n[...navItems].forEach((navItem) => {\r\n  navItem.addEventListener('click', function () {\r\n    [...navItems].forEach((navItem) => {\r\n      document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").style.display = \"none\";\r\n    });\r\n    document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").style.display = \"block\";\r\n  })\r\n});\n\n//# sourceURL=webpack://web2-frontend-FinnJanssensEHB/./src/index.js?");
+eval("\r\n\r\nlet navItems = document.querySelectorAll('#mainNav a');\r\n\r\n[...navItems].forEach((navItem) => {\r\n  navItem.addEventListener('click', function () {\r\n    [...navItems].forEach((navItem) => {\r\n      document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").classList.remove('page-visible');\r\n      document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").classList.add('page-hidden');\r\n    });\r\n    document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").classList.remove('page-hidden');\r\n    document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").classList.add('page-visible');\r\n  })\r\n});\n\n//# sourceURL=webpack://web2-frontend-FinnJanssensEHB/./src/index.js?");
 
 /***/ })
 

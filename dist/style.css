@@ -352,13 +352,11 @@ body {
 } */
 
 .pageContainer {
-  display: none;
   padding-top: 6em;
 }
 
 #homeContainer {
   padding-top: 0;
-  display: block;
 }
 
 #wieText {
@@ -369,4 +367,12 @@ body {
 #wieImg1 {
   object-fit: cover;
   grid-column: 6 / 9;
+}
+
+.page-hidden {
+  display: none;
+}
+
+.page-visible {
+  display: block;
 }
