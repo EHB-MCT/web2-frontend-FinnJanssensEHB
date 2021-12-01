@@ -7,6 +7,7 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/index.js":
@@ -15,7 +16,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://web2-frontend-FinnJanssensEHB/./src/index.js?");
+eval("\r\n\r\nlet navItems = document.querySelectorAll('#mainNav a');\r\n\r\n[...navItems].forEach((navItem) => {\r\n  navItem.addEventListener('click', function () {\r\n    [...navItems].forEach((navItem) => {\r\n      document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").style.display = \"none\";\r\n    });\r\n    document.getElementById(navItem.id.substr(3).toLowerCase() + \"Container\").style.display = \"block\";\r\n  })\r\n});\n\n//# sourceURL=webpack://web2-frontend-FinnJanssensEHB/./src/index.js?");
 
 /***/ })
 

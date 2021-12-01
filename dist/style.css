@@ -84,6 +84,7 @@ select {
   --blue: #6074b8;
   --bg: #fbe5d2;
   --black: #080709;
+  --radius: 15px;
 }
 
 h1,
@@ -103,12 +104,20 @@ h3 {
   font-style: normal;
 }
 
+h1 {
+  font-size: 4em;
+}
+
 p,
 a {
   font-family: new-spirit,
     serif;
   font-weight: 400;
   font-style: normal;
+}
+
+img {
+  border-radius: var(--radius);
 }
 
 /*SCROLLBAR*/
@@ -201,7 +210,6 @@ body {
 }
 
 #introductionSection h1 {
-  font-size: 4em;
   line-height: 0.9;
 }
 
@@ -226,7 +234,7 @@ body {
 
 .buttonPrimary {
   border: 3px solid var(--black);
-  border-radius: 15px;
+  border-radius: var(--radius);
   padding: 0.5em 1.5em;
   text-decoration: none;
   font-weight: 500;
@@ -250,7 +258,7 @@ body {
 .video-js {
   width: 800px;
   height: 450px;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
 
 .vjs-custom-theme .vjs-control-bar {
@@ -342,3 +350,23 @@ body {
   content: "Pause" !important;
   font-family: sans-serif;
 } */
+
+.pageContainer {
+  display: none;
+  padding-top: 6em;
+}
+
+#homeContainer {
+  padding-top: 0;
+  display: block;
+}
+
+#wieText {
+  flex-direction: row;
+  grid-column: 1 / span 4;
+}
+
+#wieImg1 {
+  object-fit: cover;
+  grid-column: 6 / 9;
+}
