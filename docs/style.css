@@ -173,6 +173,13 @@ body {
   max-width: 90%;
 }
 
+.imgLeft > img,
+.imgRight > img {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  height: 100%;
+  object-fit: cover;
+}
+
 .imgLeft {
   grid-column: 2 / span 3;
   justify-self: start;
@@ -181,6 +188,26 @@ body {
 .imgRight {
   grid-column: 5 / span 3;
   justify-self: end;
+}
+
+.card-blue,
+.card-pink,
+.card-yellow {
+  padding: 2em;
+  border-radius: var(--radius);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+}
+
+.card-blue {
+  background: rgba(96, 116, 184, 0.2);
+}
+
+.card-pink {
+  background: rgba(96, 116, 184, 0.2);
+}
+
+.card-yellow {
+  background: rgba(96, 116, 184, 0.2);
 }
 
 #logoHeader {
