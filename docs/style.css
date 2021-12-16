@@ -139,6 +139,11 @@ img {
 body {
   background: var(--bg);
   margin: 1em 10em;
+  background-image: url("./img/gradient_background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position-y: -40px;
 }
 
 .backgroundContainer {
@@ -199,7 +204,7 @@ body {
 }
 
 .card-blue {
-  background: rgba(96, 116, 184, 0.2);
+  background: rgba(96, 116, 184, 0.4);
 }
 
 .card-pink {
