@@ -247,6 +247,7 @@ body {
   height: 3px;
   background: var(--yellow);
   transition: width 0.2s;
+  border-radius: var(--radius);
 }
 
 #mainNav a:hover:after {
