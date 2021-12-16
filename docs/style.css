@@ -176,7 +176,6 @@ body {
   font-family: alfarn, sans-serif;
   font-weight: 400;
   font-style: normal;
-  border-radius: 10px;
 }
 
 #mainNav a:after {
@@ -191,6 +190,42 @@ body {
 #mainNav a:hover:after {
   width: 100%;
   transition: width 0.2s;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  background: none;
+  border: none;
+  font-family: alfarn, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  text-align: left;
+  font-family: new-spirit, serif !important;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 #introductionSection {

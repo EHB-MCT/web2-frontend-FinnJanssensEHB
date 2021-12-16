@@ -1,14 +1,25 @@
-'use strict';
+"use strict";
 
-let navItems = document.querySelectorAll('#mainNav a');
+let navItems = document.querySelectorAll("#mainNav a");
 
+console.log(navItems);
 [...navItems].forEach((navItem) => {
-  navItem.addEventListener('click', function () {
-    [...navItems].forEach((navItem) => {
-      document.getElementById(navItem.id.substr(3).toLowerCase() + "Container").classList.remove('page-visible');
-      document.getElementById(navItem.id.substr(3).toLowerCase() + "Container").classList.add('page-hidden');
-    });
-    document.getElementById(navItem.id.substr(3).toLowerCase() + "Container").classList.remove('page-hidden');
-    document.getElementById(navItem.id.substr(3).toLowerCase() + "Container").classList.add('page-visible');
-  })
+  navItem.addEventListener("click", function () {
+    hideAllPages();
+    showPage(navItem);
+  });
 });
+
+function hideAllPages() {
+  [...document.getElementsByClassName("pageContainer")].forEach((container) => {
+    container.classList.remove("page-visible");
+    container.classList.add("page-hidden");
+  });
+}
+
+function showPage(navItem) {
+  console.log(navItem.id.substring(3).toLowerCase() + "Container");
+  document
+    .getElementById(navItem.id.substring(3).toLowerCase() + "Container")
+    .classList.add("page-visible");
+}

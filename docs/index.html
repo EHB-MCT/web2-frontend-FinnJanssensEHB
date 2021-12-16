@@ -23,7 +23,16 @@
         <a id="navHome" href="#">Home</a>
         <a id="navWie" href="#">Wie zijn we?</a>
         <a id="navProducties" href="#">Producties</a>
-        <a id="navProgrammas" href="#">Programma's</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Content
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a id="navProgrammas" href="#">Programma's</a>
+            <a id="navBTS" href="#">BTS</a>
+          </div>
+        </div>
       </nav>
     </header>
     <main>
@@ -94,8 +103,13 @@
           />
         </section>
       </div>
-      <div class="pageContainer page-hidden" id="productiesContainer"></div>
-      <div class="pageContainer page-hidden" id="programmasContainer"></div>
+      <div class="pageContainer page-hidden" id="productiesContainer">
+        producties
+      </div>
+      <div class="pageContainer page-hidden" id="programmasContainer">
+        programmas
+      </div>
+      <div class="pageContainer page-hidden" id="btsContainer">bts</div>
     </main>
     <footer></footer>
     <script src="main.js"></script>
