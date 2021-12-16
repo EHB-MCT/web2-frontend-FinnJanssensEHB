@@ -144,6 +144,7 @@ body {
   background-attachment: fixed;
   background-size: contain;
   background-position-y: -40px;
+  scroll-behavior: smooth;
 }
 
 .backgroundContainer {
@@ -208,11 +209,15 @@ body {
 }
 
 .card-pink {
-  background: rgba(96, 116, 184, 0.2);
+  background: rgba(245, 142, 138, 0.4);
 }
 
 .card-yellow {
-  background: rgba(96, 116, 184, 0.2);
+  background: rgba(247, 203, 77, 0.4);
+}
+
+.italic {
+  font-style: italic;
 }
 
 #logoHeader {
@@ -253,6 +258,16 @@ body {
 #mainNav a:hover:after {
   width: 100%;
   transition: width 0.2s;
+}
+
+.activeNav:after {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: 3px !important;
+  background: var(--yellow) !important;
+  transition: width 0.2s !important;
+  border-radius: var(--radius) !important;
 }
 
 /* The dropdown container */

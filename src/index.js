@@ -5,6 +5,8 @@ let navItems = document.querySelectorAll("#mainNav a");
 console.log(navItems);
 [...navItems].forEach((navItem) => {
   navItem.addEventListener("click", function () {
+    [...navItems].forEach((navItem) => navItem.classList.remove("activeNav"));
+    navItem.classList.add("activeNav");
     hideAllPages();
     showPage(navItem);
   });
