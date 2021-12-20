@@ -6,7 +6,12 @@ console.log(navItems);
 [...navItems].forEach((navItem) => {
   navItem.addEventListener("click", function () {
     [...navItems].forEach((navItem) => navItem.classList.remove("activeNav"));
-    navItem.classList.add("activeNav");
+    document.getElementById("navContent").classList.remove("activeNav");
+    if (navItem.id == "navProgrammas" || navItem.id == "navBTS") {
+      document.getElementById("navContent").classList.add("activeNav");
+    } else {
+      navItem.classList.add("activeNav");
+    }
     hideAllPages();
     showPage(navItem);
   });

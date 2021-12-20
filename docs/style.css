@@ -150,7 +150,6 @@ img {
 [data-icon]:before {
   font-family: "icomoon";
   content: attr(data-icon);
-  speak: none;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
