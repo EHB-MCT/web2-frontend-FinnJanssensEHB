@@ -132,6 +132,23 @@ img {
   border-radius: var(--radius);
 }
 
+@media only screen and (max-width: 1200px) {
+  header,
+  main,
+  footer {
+    display: none !important;
+  }
+
+  #mobileNotSupportedDialog {
+    display: block !important;
+  }
+}
+
+#mobileNotSupportedDialog {
+  display: none;
+  margin: auto;
+}
+
 /*SCROLLBAR*/
 
 ::-webkit-scrollbar {
