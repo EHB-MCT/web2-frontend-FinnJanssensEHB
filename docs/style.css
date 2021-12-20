@@ -77,6 +77,17 @@ select {
 
 /* ROOT SETTINGS */
 
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon.eot");
+  src: url("./fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/icomoon.woff") format("woff"),
+    url("./fonts/icomoon.ttf") format("truetype"),
+    url("./fonts/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   font-family: sans-serif;
   --pink: #f58e8a;
@@ -108,9 +119,6 @@ h1 {
   font-size: 2.5rem;
 }
 
-p {
-}
-
 p,
 a {
   font-family: new-spirit, serif;
@@ -136,6 +144,19 @@ img {
   /* background: linear-gradient(180deg, var(--pink) 0%, var(--yellow) 35%, var(--blue) 100%); */
 }
 
+/* ICONS */
+
+[data-icon]:before {
+  font-family: "icomoon";
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   background: var(--bg);
   margin: 1em 10em;
@@ -157,6 +178,8 @@ body {
   left: 0;
   top: 0;
 }
+
+/* UTILITY */
 
 .grid {
   display: grid;
@@ -218,6 +241,18 @@ body {
 
 .italic {
   font-style: italic;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.text-yellow {
+  color: var(--yellow);
 }
 
 #logoHeader {
@@ -323,10 +358,6 @@ body {
 #introductionSection h1 {
   line-height: 0.9;
   font-size: 4rem;
-}
-
-#introductionSection p {
-  /* font-size: 1rem; */
 }
 
 #introductionText div {
@@ -478,11 +509,6 @@ body {
 
 #homeContainer {
   padding-top: 0;
-}
-
-#wieText {
-  /* flex-direction: row;
-  grid-column: 1 / span 4; */
 }
 
 #wieImg1 {
