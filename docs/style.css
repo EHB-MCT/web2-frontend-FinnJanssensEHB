@@ -565,7 +565,7 @@ video {
   background-color: transparent !important;
 }
 
-.vjs-airbox .vjs-big-play-button::before {
+/* .vjs-airbox .vjs-big-play-button::before {
   font-family: "icomoon" !important;
   font-size: 1em;
   content: "\e902" !important;
@@ -575,7 +575,7 @@ video {
 .vjs-icon-play:before {
   font-family: "icomoon" !important;
   content: "\e902" !important;
-}
+} */
 
 .vjs-airbox .vjs-volume-panel,
 .vjs-airbox .vjs-picture-in-picture-control {
@@ -591,13 +591,31 @@ video {
 }
 
 /* Change the color of various "bars". */
-.vjs-airbox .vjs-play-progress,
+.vjs-airbox .vjs-play-progress {
+  background: var(--pink) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .vjs-airbox .vjs-slider-bar {
-  background: var(--pink);
+  background: var(--yellow) !important;
+  border-radius: var(--radius) !important;
+}
+
+.vjs-airbox .vjs-slider-horizontal {
+  background: var(--blue) !important;
+  border-radius: var(--radius) !important;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 .vjs-airbox .vjs-load-progress {
   display: none !important;
+}
+
+.vjs-airbox .vjs-remaining-time-display,
+.vjs-airbox .vjs-time-tooltip {
+  font-family: "new-spirit", serif !important;
 }
 
 #homeContainer {
