@@ -10,6 +10,7 @@ window.onload = () => {
 };
 
 function initNav() {
+  // This function handles the hiding of showing of pages for the navigation
   let navItems = document.querySelectorAll("#mainNav a");
 
   [...navItems].forEach((navItem) => {
@@ -28,6 +29,7 @@ function initNav() {
 }
 
 function initDiscoverMoreBtn() {
+  // This function initializes the scroll behavior of the discover more btn
   const b = document.getElementById("ontdekMeerBtn");
   b.addEventListener("click", function () {
     document.getElementById("featuredSection").scrollIntoView({
@@ -39,6 +41,7 @@ function initDiscoverMoreBtn() {
 }
 
 function hideAllPages() {
+  // This function hides all pages
   [...document.getElementsByClassName("pageContainer")].forEach((container) => {
     container.classList.remove("page-visible");
     container.classList.add("page-hidden");
@@ -46,12 +49,14 @@ function hideAllPages() {
 }
 
 function showPage(navItem) {
+  // This function shows a specific page, based on the clicked nav item
   document
     .getElementById(navItem.id.substring(3).toLowerCase() + "Container")
     .classList.add("page-visible");
 }
 
 async function initFeaturedVideos() {
+  // This function gets all videos and featured URI's and calls the render video function for every video that is marked as featured
   let videos = await (await fetch(BASE_URL + "Videos")).json();
   let featuredVideos = await (await fetch(BASE_URL + "Featured")).json();
   let featuredVideoObjects = [];
@@ -66,13 +71,16 @@ async function initFeaturedVideos() {
 }
 
 function isFeatured(video, featuredVideos) {
+  // This function checks wether a video is featured
   for (let i = 0; i < featuredVideos.length; i++) {
     if (featuredVideos[i].link == video.link) {
       return true;
     }
   }
 }
+
 function renderVideo(videoObject, container) {
+  // this function takes a video object and a container and creates an instance of a videojs element
   container.insertAdjacentHTML(
     "beforeend",
     `
@@ -99,6 +107,7 @@ function renderVideo(videoObject, container) {
 }
 
 async function initProgrammas() {
+  // this function handles the initialisation of the programmas containers
   let container = document.getElementById("allProgrammasContainer");
   let programmas = await (await fetch(BASE_URL + "Programmas")).json();
   console.log(programmas);
@@ -114,6 +123,7 @@ async function initProgrammas() {
 }
 
 async function renderProgrammaVideos(programma) {
+  // this function renders the videos for every programma
   [...programma.videos].forEach(async (uri) => {
     console.log(uri);
     let video = await (await fetch(BASE_URL + "videos/" + uri)).json();
