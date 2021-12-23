@@ -185,7 +185,7 @@ hr {
 body {
   background: var(--bg);
   margin: 1em 5vw;
-  background-image: url("./img/gradient_background.png");
+  background-image: url("./img/bg-gradient-2.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
