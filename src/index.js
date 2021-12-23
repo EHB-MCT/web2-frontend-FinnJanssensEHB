@@ -110,7 +110,6 @@ async function initProgrammas() {
   // this function handles the initialisation of the programmas containers
   let container = document.getElementById("allProgrammasContainer");
   let programmas = await (await fetch(BASE_URL + "Programmas")).json();
-  console.log(programmas);
   programmas.forEach((programma) => {
     container.insertAdjacentHTML(
       "beforeend",
@@ -125,9 +124,7 @@ async function initProgrammas() {
 async function renderProgrammaVideos(programma) {
   // this function renders the videos for every programma
   [...programma.videos].forEach(async (uri) => {
-    console.log(uri);
     let video = await (await fetch(BASE_URL + "videos/" + uri)).json();
-    console.log(video);
     document
       .getElementById(`${programma._id}-programmaContainer`)
       .insertAdjacentHTML(
