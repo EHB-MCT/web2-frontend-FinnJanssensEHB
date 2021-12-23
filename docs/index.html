@@ -1,75 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/crm8zom.css" />
+    <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet" />
+    <link rel="icon" href="./img/AIRBX logo-01.png" />
+    <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <title>Airbox Home</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/crm8zom.css" />
-  <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet" />
-  <link rel="icon" href="./img/AIRBX logo-01.png" />
-  <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
-  <title>Airbox Home</title>
-</head>
-
-<body>
-  <div id="mobileNotSupportedDialog">
-    <h1>Sorry!</h1>
-    <h2>This website does not support mobile just yet!</h2>
-  </div>
-  <header class="grid">
-    <div id="logoHeader">
-      <img src="./img/AIRBX logo-01.png" alt="Airbox logo" />
+  <body>
+    <div id="mobileNotSupportedDialog">
+      <h1>Sorry!</h1>
+      <h2>This website does not support mobile just yet!</h2>
     </div>
-    <nav id="mainNav">
-      <a class="activeNav" id="navHome" href="#">Home</a>
-      <a id="navWie" href="#">Wie zijn we?</a>
-      <a id="navProducties" href="#">Producties</a>
-      <div class="dropdown">
-        <button id="navContent" class="dropbtn">
-          Content
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a id="navProgrammas" href="#">Programma's</a>
-          <a id="navBTS" href="#">BTS</a>
-        </div>
+    <header class="grid">
+      <div id="logoHeader">
+        <img src="./img/AIRBX logo-01.png" alt="Airbox logo" />
       </div>
-    </nav>
-  </header>
-  <main>
-    <div class="pageContainer page-visible" id="homeContainer">
-      <section id="introductionSection" class="grid">
-        <div id="introductionText">
-          <div id="introductionLeft">
-            <h1 class="text-blue">UP<br />IN THE AIR</h1>
-            <p>
-              Er wordt buiten de normale kaders content ontworpen vanuit hartje Brussel. Airbox probeert steeds het
-              beste naar boven te halen.
-            </p>
-          </div>
-          <div id="introductionRight">
-            <p>
-              Airbox is een onderzoeks- en oefenplatform van studenten. Het is een plek waar ideeën en creativiteit
-              ontstaan en worden omgezet tot producties.
-            </p>
-            <h1 class="text-pink">OUT<br />OF THE BOX</h1>
+      <nav id="mainNav">
+        <a class="activeNav" id="navHome" href="#">Home</a>
+        <a id="navWie" href="#">Wie zijn we?</a>
+        <a id="navProducties" href="#">Producties</a>
+        <div class="dropdown">
+          <button id="navContent" class="dropbtn">
+            Content
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a id="navProgrammas" href="#">Programma's</a>
+            <a id="navBTS" href="#">BTS</a>
           </div>
         </div>
-        <a href="#featuredSection" id="ontdekMeerBtn" class="buttonPrimary">
-          <span aria-hidden="true" data-icon="&#xe902;" class="text-pink"></span>
-          Ontdek meer
-        </a>
-      </section>
-      <section id="featuredSection">
-        <video id="my-player" class="video-js vjs-custom-theme" controls preload="auto"
-          poster="//vjs.zencdn.net/v/oceans.png" data-setup='{}'>
-          <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-          </source>
-          <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-          </source>
-          <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+      </nav>
+    </header>
+    <main>
+      <div class="pageContainer page-visible" id="homeContainer">
+        <section id="introductionSection" class="grid">
+          <div id="introductionText">
+            <div id="introductionLeft">
+              <h1 class="text-blue">UP<br />IN THE AIR</h1>
+              <p>
+                Er wordt buiten de normale kaders content ontworpen vanuit
+                hartje Brussel. Airbox probeert steeds het beste naar boven te
+                halen.
+              </p>
+            </div>
+            <div id="introductionRight">
+              <p>
+                Airbox is een onderzoeks- en oefenplatform van studenten. Het is
+                een plek waar ideeën en creativiteit ontstaan en worden omgezet
+                tot producties.
+              </p>
+              <h1 class="text-pink">OUT<br />OF THE BOX</h1>
+            </div>
+          </div>
+          <a href="#featuredSection" id="ontdekMeerBtn" class="buttonPrimary">
+            <span
+              aria-hidden="true"
+              data-icon="&#xe902;"
+              class="text-pink"
+            ></span>
+            Ontdek meer
+          </a>
+        </section>
+        <section id="featuredSection" class="grid">
+          <h1 id="featuredTitle">
+            <span
+              aria-hidden="true"
+              data-icon="&#xe902;"
+              class="text-pink"
+            ></span>
+            RECENTE PRODUCTIES
+          </h1>
+          <div id="featuredVideosContainer"></div>
+          <!-- <video id="my-player" class="video-js vjs-airbox vjs-big-play-centered vjs-fluid" controls preload="auto"
+          poster="https://i.vimeocdn.com/video/1302514288-9e0c947436cc5cc75457d12fbd057d9e1d96414ad9f749763_1920x1080?r=pad" data-setup='{}'>
+          <source
+            src="https://player.vimeo.com/play/2967555736?s=646962992_1640133634_1eae97cd10f0997bee03ec9ae3b7d0ee&loc=external&context=Vimeo%5CController%5CApi%5CResources%5CUser%5CVideosController.&download=1&filename=ho_ho_ho_1920x1080.mp4"
+            type="video/mp4">
           </source>
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
@@ -78,252 +90,354 @@
               supports HTML5 video
             </a>
           </p>
-        </video>
-      </section>
-    </div>
-    <div class="pageContainer page-hidden" id="wieContainer">
-      <div class="grid">
-        <div id="wieText" class="articleLeft card-blue">
-          <h1>
-            <span aria-hidden="true" data-icon="&#xe900;" class="text-blue"></span>
-            AIRWIE?
-          </h1>
-          <p>
-            We zijn een bende enthousiastelingen uit het derde jaar van de
-            Professionele Bachelor Audiovisuele Kunsten aan het RITCS in
-            Brussel. Met een gedeelde passie voor verhalen vertellen, hebben
-            we AIRBOX opgestart. Het is een online platform waarin je een
-            onderverdeling vindt van vier productiehuizen die elk hun eigen
-            content creëren. Hierin is ieder vrij om zelf een concept op poten
-            te zetten en uit te werken.
-          </p>
-          <br />
-          <p class="italic">Ons motto: Up in the air, out of the box!</p>
+        </video> -->
+        </section>
+      </div>
+      <div class="pageContainer page-hidden" id="wieContainer">
+        <div class="grid">
+          <div id="wieText" class="articleLeft card-blue">
+            <h1>
+              <span
+                aria-hidden="true"
+                data-icon="&#xe900;"
+                class="text-blue"
+              ></span>
+              AIRWIE?
+            </h1>
+            <p>
+              We zijn een bende enthousiastelingen uit het derde jaar van de
+              Professionele Bachelor Audiovisuele Kunsten aan het RITCS in
+              Brussel. Met een gedeelde passie voor verhalen vertellen, hebben
+              we AIRBOX opgestart. Het is een online platform waarin je een
+              onderverdeling vindt van vier productiehuizen die elk hun eigen
+              content creëren. Hierin is ieder vrij om zelf een concept op poten
+              te zetten en uit te werken.
+            </p>
+            <br />
+            <p class="italic">Ons motto: Up in the air, out of the box!</p>
+          </div>
+          <div class="imgRight">
+            <img
+              id="wieImg1"
+              src="./img/wie-img-1.jpg"
+              alt="wie-img-1"
+              srcset=""
+            />
+          </div>
         </div>
-        <div class="imgRight">
-          <img id="wieImg1" src="./img/wie-img-1.jpg" alt="wie-img-1" srcset="" />
+        <div class="grid">
+          <div id="wieTournee" class="allColumns card-yellow">
+            <h1>WIE IS WIE? - TOURNEE LOGE</h1>
+            <h2 class="column-span-2">Productie</h2>
+            <h2 class="column-span-2">Camera</h2>
+            <h2 class="column-span-2">Techniek</h2>
+            <div class="imgWie">
+              <img src="./img/Wie/tournee logee/Jef.png" alt="Jef" srcset="" />
+              <h3>Jef</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Josephine.jpg"
+                alt="Josephine"
+                srcset=""
+              />
+              <h3>Josephine</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Emma.jpg"
+                alt="Emma"
+                srcset=""
+              />
+              <h3>Emma</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Pauline.jpg"
+                alt="Pauline"
+                srcset=""
+              />
+              <h3>Pauline</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Robbe.jpg"
+                alt="Robbe"
+                srcset=""
+              />
+              <h3>Robbe</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Tuur.jpg"
+                alt="Tuur"
+                srcset=""
+              />
+              <h3>Tuur</h3>
+            </div>
+            <h2 class="column-span-4 mt-35px">Realisators</h2>
+            <h2 class="mt-35px">Audio</h2>
+            <h2 class="mt-35px">Presentator</h2>
+            <div class="imgWie">
+              <img src="./img/Wie/tournee logee/Bas.jpg" alt="Bas" srcset="" />
+              <h3>Bas</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Rosie.jpg"
+                alt="Rosie"
+                srcset=""
+              />
+              <h3>Rosie</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Victor.jpg"
+                alt="Victor"
+                srcset=""
+              />
+              <h3>Victor</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Daryl.jpg"
+                alt="Daryl"
+                srcset=""
+              />
+              <h3>Daryl</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Kevin.jpg"
+                alt="Kevin"
+                srcset=""
+              />
+              <h3>Kevin</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/tournee logee/Lars.jpg"
+                alt="Lars"
+                srcset=""
+              />
+              <h3>Lars</h3>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div id="wieGroteLiveshow" class="allColumns card-pink">
+            <h1>WIE IS WIE? - GROTE LIVESHOW</h1>
+            <h2 class="column-span-3">Realisators</h2>
+            <h2 class="column-span-3">Techniek & Camera</h2>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Elize.jpg"
+                alt="Elize"
+                srcset=""
+              />
+              <h3>Elize</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Karlijn.jpg"
+                alt="Karlijn"
+                srcset=""
+              />
+              <h3>Karlijn</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Laura.jpg"
+                alt="Laura"
+                srcset=""
+              />
+              <h3>Laura</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Pieter.jpg"
+                alt="Pieter"
+                srcset=""
+              />
+              <h3>Pieter</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Romi.jpg"
+                alt="Romi"
+                srcset=""
+              />
+              <h3>Romi</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Robbe.png"
+                alt="Robbe"
+                srcset=""
+              />
+              <h3>Robbe</h3>
+            </div>
+            <h2 class="column-span-4 mt-35px">Productie</h2>
+            <h2 class="mt-35px">Audio</h2>
+            <h2 class="mt-35px">Presentator</h2>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Arno.jpg"
+                alt="Arno"
+                srcset=""
+              />
+              <h3>Arno</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Romi.jpg"
+                alt="Romi"
+                srcset=""
+              />
+              <h3>Romi</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Camille.jpg"
+                alt="Camille"
+                srcset=""
+              />
+              <h3>Camille</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Lais.jpg"
+                alt="Lais"
+                srcset=""
+              />
+              <h3>Laïs</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Kevin.png"
+                alt="Kevin"
+                srcset=""
+              />
+              <h3>Kevin</h3>
+            </div>
+            <div class="imgWie">
+              <img
+                src="./img/Wie/grote liveshow/Manu.jpg"
+                alt="Manu"
+                srcset=""
+              />
+              <h3>Manu</h3>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="grid">
-        <div id="wieTournee" class="allColumns card-yellow">
-          <h1>WIE IS WIE? - TOURNEE LOGE</h1>
-          <h2 class="column-span-2">Productie</h2>
-          <h2 class="column-span-2">Camera</h2>
-          <h2 class="column-span-2">Techniek</h2>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Jef.png" alt="Jef" srcset="">
-            <h3>Jef</h3>
+      <div class="pageContainer page-hidden" id="productiesContainer">
+        <div class="grid">
+          <div class="articleLeft card-blue">
+            <h1>GROTE LIVESHOWS</h1>
+            <p>
+              Studioshows bedenken, creëren en organiseren komen geregeld aan
+              bod binnen de opleiding. Hier is het een uitdaging om met een
+              gebundelde kennis aan de slag te gaan om drie grote live shows op
+              te bouwen. Elke liveshow zal op zichzelf staan en telkens een
+              ander thema uitlichten.
+            </p>
+            <br />
+            <p>
+              Op 22 december gaat de eerste liveshow door. Tipje van de sluier:
+              iets met mode…
+            </p>
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Josephine.jpg" alt="Josephine" srcset="">
-            <h3>Josephine</h3>
+          <div class="imgRight">
+            <img
+              src="./img/Producties/grote-liveshows.jpg"
+              alt="Grote Liveshows"
+            />
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Emma.jpg" alt="Emma" srcset="">
-            <h3>Emma</h3>
+        </div>
+        <div class="grid">
+          <div class="imgLeft">
+            <img
+              src="./img/Producties/tournee-loge-crop.jpg"
+              alt="Tournée Logé"
+            />
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Pauline.jpg" alt="Pauline" srcset="">
-            <h3>Pauline</h3>
+          <div class="articleRight card-blue">
+            <h1>WEKELIJKSE LIVESHOW</h1>
+            <h2>Tournée Logé</h2>
+            <p>
+              Naast de grote liveshows worden er ook wekelijkse liveshows in
+              elkaar geknutseld. Elke week kan je op een vast moment genieten
+              van een aflevering. Bij het programma Tournée logé is dat elke
+              dinsdag om 20u via een livestream op de Facebookpagina van Airbox.
+            </p>
+            <br />
+            <p>
+              Tournée Logé gaat over een student die na een mislukte zoektocht
+              naar een kot besluit om dit schooljaar te overnachten op zijn
+              school, ‘t RITCS. Elke week spendeert hij samen met een gast de
+              nacht op een andere locatie in het schoolgebouw. Samen vullen ze
+              de avond met verschillende activiteiten in de vorm van drie korte
+              rubriekjes.
+            </p>
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Robbe.jpg" alt="Robbe" srcset="">
-            <h3>Robbe</h3>
+        </div>
+        <div class="grid">
+          <div class="articleLeft card-blue">
+            <h1>DAD - DAR</h1>
+            <h2>DAD: Dienst aan Derden</h2>
+            <p>
+              Bij dit onderdeel krijgen de studenten de kans om binnen
+              afgelijnde opdrachten van externe partijen zich te bewijzen als
+              een professionele crew. Het creatieve brein en de kennis wordt
+              gebruikt om vooral vzw’s en organisaties te ondersteunen die een
+              dure crew niet kunnen veroorloven. De studenten bepalen zelf welke
+              opdrachten ze aannemen. Samen met de opdrachtgever(s) worden
+              afspraken gemaakt om een resultaat te verkrijgen waar beiden
+              partijen trots op kunnen zijn.
+            </p>
+            <br />
+            <h2>DAR: Dienst aan RITCS</h2>
+            <p>
+              Bij DAR werken de studenten volgens hetzelfde principe als DAD.
+              Het enige verschil is dat de opdrachten specifiek vanuit het RITCS
+              komen. Enkele voorbeelden hiervan zijn de marketingdienst van het
+              RITCS en Cinema RITCS.
+            </p>
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Tuur.jpg" alt="Tuur" srcset="">
-            <h3>Tuur</h3>
+          <div class="imgRight">
+            <img src="./img/Producties/dad-dar.jpg" alt="DAR" />
           </div>
-          <h2 class="column-span-4 mt-35px">Realisators</h2>
-          <h2 class="mt-35px">Audio</h2>
-          <h2 class="mt-35px">Presentator</h2>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Bas.jpg" alt="Bas" srcset="">
-            <h3>Bas</h3>
+        </div>
+        <div class="grid">
+          <div class="imgLeft">
+            <img src="./img/wie-img-1.jpg" alt="" />
           </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Rosie.jpg" alt="Rosie" srcset="">
-            <h3>Rosie</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Victor.jpg" alt="Victor" srcset="">
-            <h3>Victor</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Daryl.jpg" alt="Daryl" srcset="">
-            <h3>Daryl</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Kevin.jpg" alt="Kevin" srcset="">
-            <h3>Kevin</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/tournee logee/Lars.jpg" alt="Lars" srcset="">
-            <h3>Lars</h3>
+          <div class="articleRight card-blue">
+            <h1>RESEARCH & EXPERIMENT</h1>
+            <p>
+              De studenten van Research en Experiment gaan opzoek naar manieren
+              hoe ze oude en nieuwe technieken kunnen samensmelten om een nieuw
+              of verbeterd product te creëren. Hun ideeën vertrekken vanuit een
+              gezonde portie nieuwsgierigheid en creativiteit en groeien uit tot
+              indrukwekkende projecten met allerlei technische snufjes.
+            </p>
           </div>
         </div>
       </div>
-      <div class="grid">
-        <div id="wieGroteLiveshow" class="allColumns card-pink">
-          <h1>WIE IS WIE? - GROTE LIVESHOW</h1>
-          <h2 class="column-span-3">Realisators</h2>
-          <h2 class="column-span-3">Techniek & Camera</h2>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Elize.jpg" alt="Elize" srcset="">
-            <h3>Elize</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Karlijn.jpg" alt="Karlijn" srcset="">
-            <h3>Karlijn</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Laura.jpg" alt="Laura" srcset="">
-            <h3>Laura</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Pieter.jpg" alt="Pieter" srcset="">
-            <h3>Pieter</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Romi.jpg" alt="Romi" srcset="">
-            <h3>Romi</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Robbe.png" alt="Robbe" srcset="">
-            <h3>Robbe</h3>
-          </div>
-          <h2 class="column-span-4 mt-35px">Productie</h2>
-          <h2 class="mt-35px">Audio</h2>
-          <h2 class="mt-35px">Presentator</h2>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Arno.jpg" alt="Arno" srcset="">
-            <h3>Arno</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Romi.jpg" alt="Romi" srcset="">
-            <h3>Romi</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Camille.jpg" alt="Camille" srcset="">
-            <h3>Camille</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Lais.jpg" alt="Lais" srcset="">
-            <h3>Laïs</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Kevin.png" alt="Kevin" srcset="">
-            <h3>Kevin</h3>
-          </div>
-          <div class="imgWie">
-            <img src="./img/Wie/grote liveshow/Manu.jpg" alt="Manu" srcset="">
-            <h3>Manu</h3>
-          </div>
-        </div>
+      <div class="pageContainer page-hidden" id="programmasContainer">
+        programmas
       </div>
-    </div>
-    <div class="pageContainer page-hidden" id="productiesContainer">
-      <div class="grid">
-        <div class="articleLeft card-blue">
-          <h1>GROTE LIVESHOWS</h1>
-          <p>
-            Studioshows bedenken, creëren en organiseren komen geregeld aan
-            bod binnen de opleiding. Hier is het een uitdaging om met een
-            gebundelde kennis aan de slag te gaan om drie grote live shows op
-            te bouwen. Elke liveshow zal op zichzelf staan en telkens een
-            ander thema uitlichten.
-          </p>
-          <br />
-          <p>
-            Op 22 december gaat de eerste liveshow door. Tipje van de sluier:
-            iets met mode…
-          </p>
-        </div>
-        <div class="imgRight">
-          <img src="./img/Producties/grote-liveshows.jpg" alt="Grote Liveshows" />
-        </div>
+      <div class="pageContainer page-hidden" id="btsContainer">bts</div>
+    </main>
+    <footer class="grid">
+      <p>Website designed and build by Finn Janssens, 2021.</p>
+      <div id="footerSocials">
+        <span aria-hidden="true" data-icon="&#xe903;"></span>
+        <span aria-hidden="true" data-icon="&#xea91;"></span>
+        <span aria-hidden="true" data-icon="&#xea92;"></span>
       </div>
-      <div class="grid">
-        <div class="imgLeft">
-          <img src="./img/wie-img-1.jpg" alt="" />
-        </div>
-        <div class="articleRight card-blue">
-          <h1>WEKELIJKSE LIVESHOW</h1>
-          <h2>Tournée Logé</h2>
-          <p>
-            Naast de grote liveshows worden er ook wekelijkse liveshows in
-            elkaar geknutseld. Elke week kan je op een vast moment genieten
-            van een aflevering. Bij het programma Tournée logé is dat elke
-            dinsdag om 20u via een livestream op de Facebookpagina van Airbox.
-          </p>
-          <br />
-          <p>
-            Tournée Logé gaat over een student die na een mislukte zoektocht
-            naar een kot besluit om dit schooljaar te overnachten op zijn
-            school, ‘t RITCS. Elke week spendeert hij samen met een gast de
-            nacht op een andere locatie in het schoolgebouw. Samen vullen ze
-            de avond met verschillende activiteiten in de vorm van drie korte
-            rubriekjes.
-          </p>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="articleLeft card-blue">
-          <h1>DAD - DAR</h1>
-          <h2>DAD: Dienst aan Derden</h2>
-          <p>
-            Bij dit onderdeel krijgen de studenten de kans om binnen
-            afgelijnde opdrachten van externe partijen zich te bewijzen als
-            een professionele crew. Het creatieve brein en de kennis wordt
-            gebruikt om vooral vzw’s en organisaties te ondersteunen die een
-            dure crew niet kunnen veroorloven. De studenten bepalen zelf welke
-            opdrachten ze aannemen. Samen met de opdrachtgever(s) worden
-            afspraken gemaakt om een resultaat te verkrijgen waar beiden
-            partijen trots op kunnen zijn.
-          </p>
-          <br />
-          <h2>DAR: Dienst aan RITCS</h2>
-          <p>
-            Bij DAR werken de studenten volgens hetzelfde principe als DAD.
-            Het enige verschil is dat de opdrachten specifiek vanuit het RITCS
-            komen. Enkele voorbeelden hiervan zijn de marketingdienst van het
-            RITCS en Cinema RITCS.
-          </p>
-        </div>
-        <div class="imgRight">
-          <img src="./img/Producties/dad-dar.jpg" alt="DAR" />
-        </div>
-      </div>
-      <div class="grid">
-        <div class="imgLeft">
-          <img src="./img/wie-img-1.jpg" alt="" />
-        </div>
-        <div class="articleRight card-blue">
-          <h1>RESEARCH & EXPERIMENT</h1>
-          <p>
-            De studenten van Research en Experiment gaan opzoek naar manieren
-            hoe ze oude en nieuwe technieken kunnen samensmelten om een nieuw
-            of verbeterd product te creëren. Hun ideeën vertrekken vanuit een
-            gezonde portie nieuwsgierigheid en creativiteit en groeien uit tot
-            indrukwekkende projecten met allerlei technische snufjes.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="pageContainer page-hidden" id="programmasContainer">
-      programmas
-    </div>
-    <div class="pageContainer page-hidden" id="btsContainer">bts</div>
-  </main>
-  <footer class="grid">
-    <p>Website designed and build by Finn Janssens, 2021.</p>
-    <div id="footerSocials">
-      <span aria-hidden="true" data-icon="&#xe903;"></span>
-      <span aria-hidden="true" data-icon="&#xea91;"></span>
-      <span aria-hidden="true" data-icon="&#xea92;"></span>
-    </div>
-  </footer>
-  <script src="main.js"></script>
-</body>
-
+    </footer>
+    <script src="main.js"></script>
+  </body>
 </html>
