@@ -1,5 +1,5 @@
 "use strict";
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "https://airbox-backend.herokuapp.com/";
 
 window.onload = () => {
   initNav();
