@@ -1,16 +1,17 @@
 "use strict";
+
 const BASE_URL = "https://airbox-backend.herokuapp.com/";
 
 window.onload = () => {
   initNav();
   initDiscoverMoreBtn();
   initFeaturedVideos();
+  initProgrammas();
 };
 
 function initNav() {
   let navItems = document.querySelectorAll("#mainNav a");
 
-  console.log(navItems);
   [...navItems].forEach((navItem) => {
     navItem.addEventListener("click", function () {
       [...navItems].forEach((navItem) => navItem.classList.remove("activeNav"));
@@ -45,7 +46,6 @@ function hideAllPages() {
 }
 
 function showPage(navItem) {
-  console.log(navItem.id.substring(3).toLowerCase() + "Container");
   document
     .getElementById(navItem.id.substring(3).toLowerCase() + "Container")
     .classList.add("page-visible");
@@ -54,12 +54,9 @@ function showPage(navItem) {
 async function initFeaturedVideos() {
   let videos = await (await fetch(BASE_URL + "Videos")).json();
   let featuredVideos = await (await fetch(BASE_URL + "Featured")).json();
-  console.log(videos);
-  console.log(featuredVideos);
   let featuredVideoObjects = [];
   videos.forEach((video) => {
     if (isFeatured(video, featuredVideos)) {
-      console.log(video);
       featuredVideoObjects.push(video);
     }
   });
@@ -99,4 +96,52 @@ function renderVideo(videoObject, container) {
   `
   );
   var player = videojs(`video-${videoObject.link.substring(18)}`);
+}
+
+async function initProgrammas() {
+  let container = document.getElementById("allProgrammasContainer");
+  let programmas = await (await fetch(BASE_URL + "Programmas")).json();
+  console.log(programmas);
+  programmas.forEach((programma) => {
+    container.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div id="${programma._id}-programmaContainer" class="singleProgrammaContainer">
+      </div>`
+    );
+    renderProgrammaVideos(programma);
+  });
+}
+
+async function renderProgrammaVideos(programma) {
+  [...programma.videos].forEach(async (uri) => {
+    console.log(uri);
+    let video = await (await fetch(BASE_URL + "videos/" + uri)).json();
+    console.log(video);
+    document
+      .getElementById(`${programma._id}-programmaContainer`)
+      .insertAdjacentHTML(
+        "beforeend",
+        `
+    <h4>${video.name}</h4>
+    <video id="programmas-video-${video.link.substring(
+      18
+    )}" class="video-js vjs-airbox vjs-big-play-centered vjs-fluid" controls preload="auto"
+      poster="${video.pictures.sizes[6].link}" data-setup='{}'>
+      <source
+        src="${video.download[2].link}"
+        type="video/mp4">
+      </source>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+    </video>
+  `
+      );
+    var player = videojs(`programmas-video-${video.link.substring(18)}`);
+  });
 }
