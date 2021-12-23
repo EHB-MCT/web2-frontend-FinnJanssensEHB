@@ -473,10 +473,14 @@ header {
   position: relative;
   margin-bottom: 20vh;
 }
-#introductionSection a {
+#ontdekMeerBtn {
   position: absolute;
   bottom: 0;
   left: auto;
+}
+
+#ontdekMeerBtn span {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #introductionText {
@@ -521,6 +525,7 @@ header {
 }
 
 .buttonPrimary {
+  background: transparent;
   border: 3px solid var(--black);
   border-radius: var(--radius);
   padding: 0.5em 1.5em;

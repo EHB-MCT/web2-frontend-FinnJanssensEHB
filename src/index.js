@@ -3,6 +3,7 @@ const BASE_URL = "https://airbox-backend.herokuapp.com/";
 
 window.onload = () => {
   initNav();
+  initDiscoverMoreBtn();
   initFeaturedVideos();
 };
 
@@ -21,6 +22,17 @@ function initNav() {
       }
       hideAllPages();
       showPage(navItem);
+    });
+  });
+}
+
+function initDiscoverMoreBtn() {
+  const b = document.getElementById("ontdekMeerBtn");
+  b.addEventListener("click", function () {
+    document.getElementById("featuredSection").scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+      inline: "center",
     });
   });
 }
